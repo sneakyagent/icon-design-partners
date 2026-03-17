@@ -623,7 +623,7 @@ function WhyUs() {
   const points = [
     ['No fluff', 'We ship real, working products — not just pretty mockups that fall apart in production.'],
     ['Full stack', 'One team for everything — frontend, backend, mobile. No coordination chaos.'],
-    ['You own it all', 'Every line of code, every asset, every credential. It's yours, always.'],
+    ['You own it all', "Every line of code, every asset, every credential. It's yours, always."],
     ['Humans only', 'You get a direct line to the people building your product. No account managers playing telephone.'],
   ]
   return (
