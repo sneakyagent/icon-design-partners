@@ -101,7 +101,7 @@ function Nav() {
       display: 'flex', alignItems: 'center', justifyContent: 'space-between'
     }}>
       <div style={{
-        fontFamily: 'var(--font-display)', fontWeight: 800,
+        fontFamily: 'var(--font-display)', fontWeight: 700,
         fontSize: 18, letterSpacing: '-0.02em', color: 'var(--white)'
       }}>
         <span style={{ color: 'var(--yellow)' }}>✦</span> Icon Design Partners
@@ -216,8 +216,8 @@ function Hero() {
         </div>
 
         <h1 style={{
-          fontFamily: 'var(--font-display)', fontWeight: 800,
-          fontSize: 'clamp(52px, 8vw, 110px)', lineHeight: 0.95,
+          fontFamily: 'var(--font-display)', fontWeight: 700,
+          fontSize: 'clamp(44px, 6vw, 82px)', lineHeight: 1.0,
           letterSpacing: '-0.04em', animation: 'fadeUp 0.7s ease 0.1s both'
         }}>
           We Build<br />
@@ -278,7 +278,7 @@ function Hero() {
         }}>
           {[['10+', 'Projects Shipped'], ['4', 'Core Services'], ['100%', 'Custom Built']].map(([num, label]) => (
             <div key={label}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 32, color: 'var(--yellow)' }}>{num}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 32, color: 'var(--yellow)' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--gray-light)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 500 }}>{label}</div>
             </div>
           ))}
@@ -351,7 +351,7 @@ function ServiceCard({ service, index }) {
       {/* Number */}
       <div style={{
         position: 'absolute', top: 24, right: 28,
-        fontFamily: 'var(--font-display)', fontWeight: 800,
+        fontFamily: 'var(--font-display)', fontWeight: 700,
         fontSize: 64, color: 'rgba(255,255,255,0.04)', lineHeight: 1,
         userSelect: 'none'
       }}>
@@ -396,8 +396,8 @@ function Services() {
           marginBottom: 16
         }}>What We Do</div>
         <h2 style={{
-          fontFamily: 'var(--font-display)', fontWeight: 800,
-          fontSize: 'clamp(36px, 5vw, 60px)', letterSpacing: '-0.03em',
+          fontFamily: 'var(--font-display)', fontWeight: 700,
+          fontSize: 'clamp(30px, 4vw, 50px)', letterSpacing: '-0.02em',
           lineHeight: 1.05
         }}>
           We don't do templates.<br />
@@ -536,8 +536,8 @@ function Clients() {
               marginBottom: 16
             }}>Our Work</div>
             <h2 style={{
-              fontFamily: 'var(--font-display)', fontWeight: 800,
-              fontSize: 'clamp(36px, 5vw, 60px)', letterSpacing: '-0.03em', lineHeight: 1.05
+              fontFamily: 'var(--font-display)', fontWeight: 700,
+              fontSize: 'clamp(30px, 4vw, 50px)', letterSpacing: '-0.02em', lineHeight: 1.05
             }}>
               Clients we've<br />
               <span style={{ color: 'var(--yellow)' }}>shipped for.</span>
@@ -583,8 +583,8 @@ function Process() {
             marginBottom: 16
           }}>How It Works</div>
           <h2 style={{
-            fontFamily: 'var(--font-display)', fontWeight: 800,
-            fontSize: 'clamp(36px, 5vw, 60px)', letterSpacing: '-0.03em', lineHeight: 1.05
+            fontFamily: 'var(--font-display)', fontWeight: 700,
+            fontSize: 'clamp(30px, 4vw, 50px)', letterSpacing: '-0.02em', lineHeight: 1.05
           }}>Simple process.<br /><span style={{ color: 'var(--gray-light)' }}>Real results.</span></h2>
         </div>
 
@@ -599,7 +599,7 @@ function Process() {
               position: 'relative'
             }}>
               <div style={{
-                fontFamily: 'var(--font-display)', fontWeight: 800,
+                fontFamily: 'var(--font-display)', fontWeight: 700,
                 fontSize: 48, color: 'rgba(232,255,71,0.15)', marginBottom: 16,
                 lineHeight: 1
               }}>{step.num}</div>
@@ -638,8 +638,8 @@ function WhyUs() {
             marginBottom: 16
           }}>Why Icon Design Partners</div>
           <h2 style={{
-            fontFamily: 'var(--font-display)', fontWeight: 800,
-            fontSize: 'clamp(36px, 4vw, 54px)', letterSpacing: '-0.03em', lineHeight: 1.05
+            fontFamily: 'var(--font-display)', fontWeight: 700,
+            fontSize: 'clamp(30px, 3.5vw, 46px)', letterSpacing: '-0.02em', lineHeight: 1.05
           }}>
             We're the team<br /> that actually<br />
             <span style={{ color: 'var(--yellow)' }}>gets it done.</span>
@@ -707,8 +707,8 @@ function Contact() {
         </div>
 
         <h2 style={{
-          fontFamily: 'var(--font-display)', fontWeight: 800,
-          fontSize: 'clamp(40px, 6vw, 80px)', letterSpacing: '-0.04em', lineHeight: 1,
+          fontFamily: 'var(--font-display)', fontWeight: 700,
+          fontSize: 'clamp(32px, 4.5vw, 62px)', letterSpacing: '-0.02em', lineHeight: 1.1,
           marginBottom: 24
         }}>
           Ready to build<br />
@@ -727,7 +727,7 @@ function Contact() {
           display: 'inline-flex', alignItems: 'center', gap: 14,
           background: 'var(--yellow)', color: 'var(--black)',
           padding: '22px 52px', borderRadius: 80,
-          fontFamily: 'var(--font-display)', fontWeight: 800,
+          fontFamily: 'var(--font-display)', fontWeight: 700,
           fontSize: 18, letterSpacing: '-0.01em',
           transition: 'all 0.3s ease',
           boxShadow: '0 0 0 rgba(232,255,71,0)'
