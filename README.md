@@ -1,4 +1,4 @@
-# Icon Design Partners — Website
+# Icon Design Partners — Website 
 
 ## Local Dev
 ```bash
