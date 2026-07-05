@@ -48,8 +48,8 @@ function Nav() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Icon Design Partners home">
-        <span className="brand-mark">IDP</span>
-        <span>Icon Design Partners</span>
+        <span className="brand-mark" aria-hidden="true">I</span>
+        <span className="brand-name">Icon Design Partners</span>
       </a>
       <button className="menu-button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="site-menu">
         <span>{open ? 'Close' : 'Menu'}</span>
@@ -200,8 +200,22 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer">
-      <span>Icon Design Partners</span>
-      <span>© {new Date().getFullYear()}</span>
+      <div className="footer-brand">
+        <a className="brand" href="#top" aria-label="Icon Design Partners home">
+          <span className="brand-mark" aria-hidden="true">I</span>
+          <span className="brand-name">Icon Design Partners</span>
+        </a>
+        <p>Friendly websites, apps, and digital tools for businesses that want more clients.</p>
+      </div>
+      <nav className="footer-links" aria-label="Footer navigation">
+        {navLinks.map(([label, href]) => (
+          <a key={label} href={href}>{label}</a>
+        ))}
+      </nav>
+      <div className="footer-contact">
+        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        <span>© {new Date().getFullYear()} Icon Design Partners</span>
+      </div>
     </footer>
   )
 }

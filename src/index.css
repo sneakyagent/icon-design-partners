@@ -67,18 +67,18 @@ img {
 
 .site-header {
   position: sticky;
-  top: 0;
+  top: 12px;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 18px;
   width: min(1180px, calc(100% - 40px));
-  margin: 18px auto 0;
-  padding: 10px 12px 10px 14px;
-  background: rgba(251, 247, 239, 0.86);
+  margin: 12px auto 0;
+  padding: 12px 14px;
+  background: rgba(251, 247, 239, 0.92);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 8px;
   box-shadow: 0 14px 40px rgba(76, 59, 38, 0.08);
   backdrop-filter: blur(16px);
 }
@@ -95,33 +95,46 @@ img {
 
 .brand {
   gap: 10px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
   color: var(--white);
   background: var(--ink);
-  border-radius: 50%;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.brand-name {
+  display: block;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 17px;
 }
 
 .site-nav {
-  gap: 6px;
+  gap: 4px;
   font-size: 14px;
   font-weight: 700;
   color: var(--muted);
 }
 
 .site-nav a {
-  padding: 10px 14px;
-  border-radius: 999px;
+  padding: 9px 12px;
+  border-radius: 7px;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
@@ -143,11 +156,11 @@ img {
 
 .menu-button {
   display: none;
-  padding: 10px 16px;
+  padding: 9px 14px;
   color: var(--ink);
   background: var(--cream);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 7px;
   font-weight: 800;
 }
 
@@ -479,20 +492,53 @@ h3 {
 }
 
 .footer {
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1.1fr) auto minmax(240px, 0.8fr);
+  align-items: start;
+  gap: clamp(28px, 6vw, 80px);
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 28px 0 38px;
+  padding: 34px 0 44px;
   color: var(--muted);
   border-top: 1px solid var(--line);
   font-size: 14px;
 }
 
-.footer span:first-child {
+.footer .brand {
+  display: inline-flex;
   color: var(--ink);
-  font-family: var(--font-display);
+}
+
+.footer-brand p {
+  max-width: 390px;
+  margin: 14px 0 0;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-links a,
+.footer-contact a {
+  width: fit-content;
+  color: var(--ink);
   font-weight: 800;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--sage-dark);
+}
+
+.footer-contact {
+  align-items: flex-start;
+}
+
+.footer-contact span {
+  color: var(--muted);
 }
 
 .cookie-banner {
@@ -547,8 +593,8 @@ h3 {
 
 @media (max-width: 980px) {
   .site-header {
-    align-items: flex-start;
-    border-radius: 22px;
+    align-items: center;
+    border-radius: 8px;
   }
 
   .menu-button {
@@ -566,7 +612,7 @@ h3 {
     padding: 12px;
     background: rgba(251, 247, 239, 0.96);
     border: 1px solid var(--line);
-    border-radius: 22px;
+    border-radius: 8px;
     box-shadow: 0 18px 46px rgba(76, 59, 38, 0.12);
   }
 
@@ -598,6 +644,14 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
   .process-grid {
     border: 0;
     gap: 14px;
@@ -624,9 +678,18 @@ h3 {
     margin-top: 12px;
   }
 
-  .brand span:last-child {
-    max-width: 150px;
-    line-height: 1.1;
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    max-width: calc(100vw - 170px);
+    font-size: 15px;
   }
 
   h1 {
@@ -701,7 +764,7 @@ h3 {
   }
 
   .footer {
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
