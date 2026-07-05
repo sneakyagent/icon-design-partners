@@ -4,7 +4,7 @@ const EMAIL = 'admin@icondesignpartners.com'
 
 const navLinks = [
   ['Services', '#services'],
-  ['Work', '#work'],
+  ['Clients', '#work'],
   ['Process', '#process'],
   ['Contact', '#contact'],
 ]
@@ -28,11 +28,56 @@ const services = [
   },
 ]
 
-const work = [
-  ['Jaybird Group', 'Agency website and digital product support'],
-  ['City Ice Denver', 'Local business website and conversion paths'],
-  ['Green Valley Naturals', 'E-commerce storytelling and product experience'],
-  ['Front Range Runner', 'Service brand site for coaching leads'],
+const clients = [
+  {
+    name: 'Jaybird Group',
+    url: 'https://www.jaybirdgroup.com',
+    tagline: 'Strategic Thinking. Agile Development.',
+    text: 'Full-service design and development agency work for web and app experiences.',
+    tags: ['Agency', 'Web', 'Apps'],
+  },
+  {
+    name: 'Green Valley Naturals',
+    url: 'https://www.greenvalleynaturals.com',
+    tagline: 'Rooted in Nature. Refined by Science.',
+    text: 'Natural supplement brand experience with product storytelling and e-commerce structure.',
+    tags: ['E-Commerce', 'Brand', 'Web'],
+  },
+  {
+    name: 'LongevityGLP',
+    url: 'https://www.longevityglp.com',
+    tagline: "Unlock Your Body's Full Potential.",
+    text: 'Health and wellness product experience for peptide therapeutics and performance support.',
+    tags: ['Health Tech', 'Web', 'Commerce'],
+  },
+  {
+    name: 'Gene Guard Detox',
+    url: 'https://www.geneguarddetox.com',
+    tagline: 'Patent Pending Probiotic Detox.',
+    text: 'Biotech-facing web presence for a probiotic detox product and company story.',
+    tags: ['Biotech', 'Brand', 'Web'],
+  },
+  {
+    name: 'City Ice Denver',
+    url: 'https://www.cityicedenver.com',
+    tagline: "Denver's Go-To for Ice Delivery.",
+    text: 'Local business website for scheduled and emergency ice delivery across Colorado.',
+    tags: ['Local Business', 'Web', 'Leads'],
+  },
+  {
+    name: 'Front Range Runner',
+    url: 'https://www.frontrangerunner.com',
+    tagline: 'Lace Up. Show Up. Level Up.',
+    text: 'Service brand site for personalized running coaching along Colorado’s Front Range.',
+    tags: ['Fitness', 'Brand', 'Web'],
+  },
+  {
+    name: 'Dry Ice Inc USA',
+    url: 'https://www.dryiceincusa.com',
+    tagline: 'Industrial Dry Ice & Blasting.',
+    text: 'Industrial dry ice supply and blasting website for manufacturing and food processing.',
+    tags: ['Industrial', 'Web', 'B2B'],
+  },
 ]
 
 const process = [
@@ -71,28 +116,36 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero-copy">
-        <p className="eyebrow">Friendly websites and apps for growing businesses</p>
-        <h1>Friendly websites that help clients trust and hire you.</h1>
-        <p className="hero-text">
-          Icon Design Partners builds warm, professional websites and digital tools for teams that want more clients without sounding like everybody else.
-        </p>
-        <div className="hero-actions">
-          <a className="button primary" href={`mailto:${EMAIL}`}>
-            Tell us about your project
-          </a>
-          <a className="button secondary" href="#work">
-            See the work
-          </a>
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <p className="eyebrow">Websites, apps, and digital systems</p>
+          <h1>Websites and apps that make you easier to hire.</h1>
+          <p className="hero-text">
+            Icon Design Partners designs and builds websites, apps, portals, and launch-ready digital tools for businesses that need more leads and less confusion.
+          </p>
+          <div className="hero-actions">
+            <a className="button primary" href={`mailto:${EMAIL}`}>
+              Start a project
+            </a>
+            <a className="button secondary" href="#work">
+              View clients
+            </a>
+          </div>
+          <div className="trust-row" aria-label="Project highlights">
+            <span>Strategy</span>
+            <span>Design</span>
+            <span>Development</span>
+            <span>Launch</span>
+          </div>
         </div>
-        <div className="trust-row" aria-label="Project highlights">
-          <span>Custom design</span>
-          <span>Clear communication</span>
-          <span>Launch-ready builds</span>
+        <div className="hero-visual" aria-label="Digital product mockups on a studio desk">
+          <img src="/client-friendly-hero.png" alt="Layered website and mobile app mockups on a bright creative studio desk" />
         </div>
       </div>
-      <div className="hero-visual" aria-label="Warm digital product mockups on a creative desk">
-        <img src="/client-friendly-hero.png" alt="Layered website and mobile app mockups on a bright creative studio desk" />
+      <div className="proof-strip" aria-label="Client proof">
+        <span>Built for 7+ client brands</span>
+        <span>Web, mobile, e-commerce, and B2B</span>
+        <span>Direct founder-level communication</span>
       </div>
     </section>
   )
@@ -124,16 +177,28 @@ function Services() {
 function Work() {
   return (
     <section className="section work" id="work">
-      <div className="section-heading compact">
-        <p className="eyebrow">Recent client work</p>
-        <h2>Built for real businesses, not imaginary case studies.</h2>
+      <div className="section-heading work-heading">
+        <div>
+          <p className="eyebrow">Client work</p>
+          <h2>A portfolio with range, not filler.</h2>
+        </div>
+        <p>
+          From local service companies to health, wellness, biotech, industrial, and agency work, the portfolio shows a range of real business needs.
+        </p>
       </div>
       <div className="work-list">
-        {work.map(([name, detail]) => (
-          <article className="work-item" key={name}>
-            <h3>{name}</h3>
-            <p>{detail}</p>
-          </article>
+        {clients.map((client) => (
+          <a className="work-item" href={client.url} target="_blank" rel="noopener noreferrer" key={client.name}>
+            <span className="work-kicker">{client.tags[0]}</span>
+            <h3>{client.name}</h3>
+            <p className="work-tagline">{client.tagline}</p>
+            <p>{client.text}</p>
+            <div className="work-tags">
+              {client.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </a>
         ))}
       </div>
     </section>
