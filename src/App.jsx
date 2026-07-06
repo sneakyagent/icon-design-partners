@@ -12,19 +12,27 @@ const navLinks = [
 const services = [
   {
     title: 'Websites that sell',
+    label: 'Marketing sites',
     text: 'Friendly, polished websites for service businesses, local brands, and growing companies that need visitors to become leads.',
+    points: ['Landing pages', 'Local SEO basics', 'Lead forms'],
   },
   {
     title: 'Custom web apps',
+    label: 'Business tools',
     text: 'Booking flows, dashboards, client portals, internal tools, and the practical systems your team needs to work faster.',
+    points: ['Dashboards', 'Portals', 'Admin tools'],
   },
   {
     title: 'Mobile experiences',
+    label: 'Responsive product work',
     text: 'Mobile-first products and responsive interfaces that feel easy for customers on the devices they actually use.',
+    points: ['Mobile UX', 'App flows', 'Responsive UI'],
   },
   {
     title: 'Launch support',
+    label: 'Go-live help',
     text: 'Hosting, analytics, performance tuning, SEO basics, and practical support after the site goes live.',
+    points: ['Hosting', 'Analytics', 'Performance'],
   },
 ]
 
@@ -154,19 +162,31 @@ function Hero() {
 function Services() {
   return (
     <section className="section services" id="services">
-      <div className="section-heading">
-        <p className="eyebrow">What we can help with</p>
-        <h2>Digital work that feels human before it feels technical.</h2>
+      <div className="section-heading services-heading">
+        <div>
+          <p className="eyebrow">What we can help with</p>
+          <h2>Clear digital work for teams that need clients.</h2>
+        </div>
         <p>
-          Whether you need a better first impression or a custom workflow behind the scenes, we make the experience simple for your customers and your team.
+          Websites, apps, and backend systems that make your business easier to understand, trust, and contact.
         </p>
       </div>
       <div className="service-grid">
         {services.map((service, index) => (
           <article className="service-card" key={service.title}>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <h3>{service.title}</h3>
-            <p>{service.text}</p>
+            <div className="service-card-top">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <p>{service.label}</p>
+            </div>
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </div>
+            <ul>
+              {service.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </article>
         ))}
       </div>
