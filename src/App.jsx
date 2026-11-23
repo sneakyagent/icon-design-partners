@@ -41,8 +41,9 @@ const clients = [
     name: 'Jaybird Group',
     url: 'https://www.jaybirdgroup.com',
     tagline: 'Strategic Thinking. Agile Development.',
-    text: 'Full-service design and development agency work for web and app experiences.',
+    text: 'Digital strategy, design, and development for growing companies across a range of industries.',
     tags: ['Agency', 'Web', 'Apps'],
+    featuredClients: ['MasTec', "Ken’s Food Service", 'MBA', 'Locast', 'Dohn Construction', 'Air Comfort', 'Trades2Work'],
   },
   {
     name: 'Green Valley Naturals',
@@ -208,16 +209,26 @@ function Work() {
       </div>
       <div className="work-list">
         {clients.map((client) => (
-          <a className="work-item" href={client.url} target="_blank" rel="noopener noreferrer" key={client.name}>
-            <span className="work-kicker">{client.tags[0]}</span>
-            <h3>{client.name}</h3>
-            <p className="work-tagline">{client.tagline}</p>
-            <p>{client.text}</p>
-            <div className="work-tags">
-              {client.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
+          <a className={`work-item${client.featuredClients ? ' featured-work' : ''}`} href={client.url} target="_blank" rel="noopener noreferrer" key={client.name}>
+            <div className="work-main">
+              <span className="work-kicker">{client.tags[0]}</span>
+              <h3>{client.name}</h3>
+              <p className="work-tagline">{client.tagline}</p>
+              <p>{client.text}</p>
+              <div className="work-tags">
+                {client.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
             </div>
+            {client.featuredClients && (
+              <div className="featured-clients">
+                <span className="featured-label">Selected Jaybird clients</span>
+                <div className="client-name-list">
+                  {client.featuredClients.map((name) => <span key={name}>{name}</span>)}
+                </div>
+              </div>
+            )}
           </a>
         ))}
       </div>
